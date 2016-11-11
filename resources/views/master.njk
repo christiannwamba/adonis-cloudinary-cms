@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+  <section>
+    <div class="__wrapper ui two column centered grid">
+      <div class="column">
+        {% block content %}{% endblock %}
+      </div>
+
+      {% block footer %}
+        <div class="__footer">
+          <ul>
+            <li>
+              <a href="https://twitter.com/intent/tweet?url=http://adonisjs.com&text=I am using AdonisJs, a practical MVC framework for nodejs&hashtags=nodejs,adonisframework" target="_blank">
+                <img src="/assets/twitter.svg"> 
+              </a>
+            </li>
+            <li>
+              <a href="http://cloudinary.com/" target="_blank"><img src="http://res-1.cloudinary.com/cloudinary/image/asset/dpr_2.0/logo-e0df892053afd966cc0bfe047ba93ca4.png" style="height: 20px; width: auto"/></a>
+            </li>
+            <li>
+              <a href="http://www.adonisjs.com/" target="_blank"><img src="/assets/favicon.png" style="height: 20px; width: auto"/></a>
+            </li>
+          </ul>
+        </div>
+      {% endblock %}
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+</body>
+</html>

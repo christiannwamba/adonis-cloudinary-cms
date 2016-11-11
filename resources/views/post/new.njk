@@ -1,0 +1,24 @@
+{% extends 'master' %}
+
+{% block content %}
+    <h2>New Post</h2>
+  {{ form.open({action: 'PostController.create'}) }}
+
+    {{ csrfField }}
+
+    <div class="ui form">
+        <div class="field">
+            {{ form.label('Post Title') }}
+            {{ form.text('title', null) }}
+        </div>
+
+        <div class="field">
+            {{ form.label('Body') }}
+            {{ form.textarea('body', null) }}
+        </div>
+
+        {{ form.submit('Create', 'create', { class: 'ui blue button' }) }}
+    </div>
+
+  {{ form.close() }}
+{% endblock %}
