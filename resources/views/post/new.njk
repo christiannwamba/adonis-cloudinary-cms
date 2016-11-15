@@ -2,13 +2,16 @@
 
 {% block content %}
     <h2>New Post</h2>
+    <div class="paint_container" id="canvas">
+        <!-- Canvas to drop image after processing -->
+    </div>
   {{ form.open({action: 'PostController.create'}) }}
 
     {{ csrfField }}
 
     <div class="ui form">
         <div class="field">
-            {{ form.label('Post Title') }}
+            {{ form.label('Title') }}
             {{ form.text('title', null) }}
         </div>
 
@@ -16,6 +19,10 @@
             {{ form.label('Body') }}
             {{ form.textarea('body', null) }}
         </div>
+
+        <input type="hidden" id="image-input" name="image">
+
+        <button id="upload-button" class="ui purple button" type="button">Upload Featured Image</button>
 
         {{ form.submit('Create', 'create', { class: 'ui blue button' }) }}
     </div>

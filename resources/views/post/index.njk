@@ -1,0 +1,33 @@
+{% extends 'master' %}
+
+{% block content %}
+<br>
+<h2>Articles <a href="/new" class="ui blue button">New Post</a></h2>
+<div class="ui cards">
+  {% for post in posts %}
+  <div class="card">
+    <div class="image">
+        <img src="{{post.image}}" syyle="width: 100%; heigth: auto;">
+    </div>
+    <div class="content">
+        <a class="header" href="/post/{{post.id}}">{{post.title}}</a>
+        <div class="meta">
+            <span class="date">{{post.created_at}}</span>
+        </div>
+        <div class="description">
+        {{post.body.substring(0, 50)}}...
+        </div>
+        <div class="extra content">
+            <div class="ui two buttons">
+                <a class="ui basic green button" href="/edit/{{post.id}}">Edit</a>
+                <a class="ui basic red button" href="/delete/{{post.id}}">Delete</a>
+            </div>
+        </div>
+    </div>
+  </div>
+  {% else %}
+  <h3> No posts found </h3>
+  {% endfor %}
+</div>
+
+{% endblock %}

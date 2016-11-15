@@ -17,7 +17,14 @@
 
 const Route = use('Route');
 
-Route.on('/').render('welcome');
+Route.get('/', 'PostController.index');
 
 Route.get('/new', 'PostController.new');
+Route.get('/post/:id', 'PostController.read');
+
 Route.post('/create', 'PostController.create');
+
+Route.get('/edit/:id', 'PostController.edit');
+Route.post('/update', 'PostController.update');
+
+Route.get('/delete/:id', 'PostController.delete');
